@@ -1,10 +1,9 @@
-
 values_list = ["1", 1, True]
-values_list_2 = [54.32, 'Строка']
+values_list_2 = [54.32, "Строка"]
 values_dict = {"a": "0", "b": 0, "c": False}
 
 
-def print_params(a=1, b='строка', c=True):
+def print_params(a=1, b="строка", c=True):
     print(a, b, c)
 
 
