@@ -7,25 +7,25 @@ data_structure = [
 ]
 
 
-def calculate_structure_sum(data_structure, summ=[0]):
+def calculate_structure_sum(data_structure):
     if not data_structure:
         return 0
     if isinstance(data_structure, int):
-        summ[0] = summ[0] + data_structure
         return data_structure
     if isinstance(data_structure, str):
-        return calculate_structure_sum(len(data_structure), summ)
+        return calculate_structure_sum(len(data_structure))
     if isinstance(data_structure, dict):
         data = [*data_structure.keys(), *data_structure.values()]
-        return calculate_structure_sum(data, summ)
+        return calculate_structure_sum(data)
     if (
         isinstance(data_structure, list)
         or isinstance(data_structure, tuple)
         or isinstance(data_structure, set)
     ):
+        sum_ = 0
         for i in data_structure:
-            calculate_structure_sum(i, summ)
-        return summ[0]
+            sum_ = sum_ + calculate_structure_sum(i)
+        return sum_
 
 
 result = calculate_structure_sum(data_structure)
