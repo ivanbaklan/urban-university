@@ -5,12 +5,12 @@ class Figure:
     sides_count = 0
 
     def __init__(self, color, *sides, filled=True):
-        self._sides = list(sides)
-        self._color = list(color)
+        self.__sides = list(sides)
+        self.__color = list(color)
         self.filled = filled
 
     def get_color(self):
-        return self._color
+        return self.__color
 
     def __is_valid_color(self, color):
         for i in color:
@@ -20,10 +20,10 @@ class Figure:
 
     def set_color(self, *color):
         if self.__is_valid_color(color):
-            self._color = list(color)
+            self.__color = list(color)
 
     def __is_valid_sides(self, *sides):
-        if len(sides) != len(self._sides):
+        if len(sides) != len(self.__sides):
             return False
         for side in sides:
             if not isinstance(side, int) and side > 0:
@@ -31,14 +31,14 @@ class Figure:
         return True
 
     def get_sides(self):
-        return self._sides
+        return self.__sides
 
     def __len__(self):
-        return sum(self._sides)
+        return sum(self.__sides)
 
     def set_sides(self, *new_sides):
         if self.__is_valid_sides(*new_sides):
-            self._sides = list(new_sides)
+            self.__sides = list(new_sides)
 
 
 class Circle(Figure):
