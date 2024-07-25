@@ -22,7 +22,9 @@ class WarehouseManager:
     def run(self, requests):
         processes = []
         for request in requests:
-            process = multiprocessing.Process(target=self.process_request, args=(request,))
+            process = multiprocessing.Process(
+                target=self.process_request, args=(request,)
+            )
             processes.append(process)
         [process.start() for process in processes]
         [process.join() for process in processes]
@@ -39,7 +41,7 @@ if __name__ == "__main__":
         ("product2", "receipt", 150),
         ("product1", "shipment", 30),
         ("product3", "receipt", 200),
-        ("product2", "shipment", 50)
+        ("product2", "shipment", 50),
     ]
     # Запускаем обработку запросов
     manager.run(requests)
