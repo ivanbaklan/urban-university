@@ -1,6 +1,6 @@
 import threading
-from time import sleep
 from queue import Queue
+from time import sleep
 
 
 class Table:
@@ -44,7 +44,9 @@ class Cafe:
                     break
             else:
                 self.queue.put(customer)
-                print(f"Посетитель номер {customer.name} ожидает свободный стол. (помещение в очередь)")
+                print(
+                    f"Посетитель номер {customer.name} ожидает свободный стол. (помещение в очередь)"
+                )
 
 
 class Customer(threading.Thread):
@@ -55,7 +57,9 @@ class Customer(threading.Thread):
         self.table = None
 
     def run(self):
-        print(f"Посетитель номер {self.name} сел за стол {self.table.number}. (начало обслуживания)")
+        print(
+            f"Посетитель номер {self.name} сел за стол {self.table.number}. (начало обслуживания)"
+        )
         sleep(5)
         self.table.is_busy = False
         print(f"Посетитель номер {self.name} покушал и ушёл. (конец обслуживания)")
