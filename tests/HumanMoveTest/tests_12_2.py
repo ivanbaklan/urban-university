@@ -50,7 +50,7 @@ class TournamentTest(unittest.TestCase):
         """
         additional test tournament distance = 90 with Усэйн and Андрей
         этот тест падает потому что в классе Tournament методе start
-        допущена логическая ошибка, провкрка на выполнение дистанции должна проходить
+        допущена логическая ошибка, проверка на выполнение дистанции должна проходить
         после обновления атрибутов всех учасников.
         """
         tournament_4 = Tournament(90, self.runner_2, self.runner_1)
