@@ -3,7 +3,7 @@ import unittest
 import runner
 
 
-class RunnerTes(unittest.TestCase):
+class RunnerTest(unittest.TestCase):
 
     def test_walk(self):
         test_runner = runner.Runner("test_runner")
