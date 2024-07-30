@@ -4,7 +4,7 @@ import runner
 from runner_and_tournament import Runner, Tournament
 
 
-class RunnerTes(unittest.TestCase):
+class RunnerTest(unittest.TestCase):
     is_frozen = False
 
     @unittest.skipIf(is_frozen, "Тесты в этом кейсе заморожены.")
