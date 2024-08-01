@@ -19,7 +19,7 @@ class UserState(StatesGroup):
 
 
 @dp.message_handler(commands=["start"])
-async def all_messages(message):
+async def start_command(message):
     await message.answer("Привет! Я бот помогающий твоему здоровью.", reply_markup=kb)
 
 
