@@ -28,6 +28,7 @@ class Tournament:
     def start(self):
         finishers = {}
         place = 1
+        self.participants = sorted(self.participants, key=lambda runner: runner.speed, reverse=True)
         while self.participants:
             for participant in self.participants:
                 participant.run()

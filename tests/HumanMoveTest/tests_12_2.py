@@ -55,8 +55,6 @@ class TournamentTest(unittest.TestCase):
         """
         tournament_4 = Tournament(90, self.runner_2, self.runner_1)
         results = tournament_4.start()
-        print(results[2].name)
-        print(self.runner_2.name)
         self.assertEqual(results[2].name, self.runner_2.name)
 
 
