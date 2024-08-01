@@ -9,8 +9,7 @@ dp = Dispatcher(bot, storage=MemoryStorage())
 kb = ReplyKeyboardMarkup(resize_keyboard=True)
 key_info = KeyboardButton(text="Информация")
 key_count = KeyboardButton(text="Рассчитать")
-kb.add(key_info)
-kb.add(key_count)
+kb.add(key_info, key_count)
 
 
 class UserState(StatesGroup):
